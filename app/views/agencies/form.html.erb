@@ -1,0 +1,19 @@
+<div class="fields">
+  <%= a.label :name, "Nombre: " %>
+  <%= a.text_field :name %>
+</div>
+
+<div class="fields">
+  <%= a.label :colour, "Color del carro :" %>
+  <%= a.label :colour %>
+</div>
+
+<div class="fields">
+  <%= a.label :year, "Año del carro: " %>
+  <%= a.label :year %>
+</div>
+
+<div class="fields">
+  <%= a.label :agency, "Agencia: " %>
+  <%= a.select :agency_id, option_for_select(@agency.collect{ |a| [a.name.titleize, a.id], @car.agency.name.titleize }) %>
+</div>

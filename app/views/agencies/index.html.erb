@@ -1,0 +1,30 @@
+<h1> Agencias </h1>
+
+<%= link_to "Agregar agencia", new_agency_path%>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre de la agencia</th>
+      <th colspan="2">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @agencies.each do |a|%>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.name%></td>
+      <td><%= link_to "Editar", edit_agency_path(a) %></td>
+      <td><%= link_to "Borrar", agency_path(a), method: :delete%></td>
+    </tr>
+  <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+
+</table>

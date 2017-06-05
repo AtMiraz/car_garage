@@ -1,0 +1,8 @@
+<h2>Editar agencia <%= @agency.name%></h2>
+
+<%= form_for @agency, url: agency_path, method: :put do |a| %>
+<%= render "agencies/form", a: a %>
+  <div class="fields">
+    <%= a.submit "Guardar" %>
+  </div>
+<% end %>

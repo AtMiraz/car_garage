@@ -1,0 +1,37 @@
+<h1> Carros </h1>
+
+<%= link_to "Agregar carro", new_car_path%>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre del carro</th>
+      <th>Color del carro</th>
+      <th>Año del carro</th>
+      <th>Agencia</th>
+      <th colspan="2">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @cars.each do |a|%>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.name%></td>
+      <td><%= a.colour%></td>
+      <td><%= a.name%></td>
+      <td><%= a.agency.name %></td>
+      
+      <td><%= link_to "Editar", edit_car_path%></td>
+      <td><%= link_to "Borrar", car_path(a), method: :delete%></td>
+    </tr>
+  <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+
+</table>

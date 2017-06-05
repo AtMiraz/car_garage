@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise
 gem 'devise'
 
+# Using bootstrap
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+
+# JQuery gem needed for bootstrap
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,0 +1,8 @@
+<h2>Agregar agencias</h2>
+
+<%= form_for @agency, url: agencies_path, method: :post do |a| %>
+  <%= render "agencies/form", a: a %>
+  <div class="fields">
+    <%= a.submit "Guardar" %>
+  </div>
+<% end %>
