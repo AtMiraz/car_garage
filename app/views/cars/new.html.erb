@@ -1,8 +1,6 @@
 <h2>Agregar carro</h2>
 
-<%= form_for @agency, url: cars_path, method: :post do |a| %>
-  <%= render "agencies/form", a: a %>
-  <div class="fields">
-    <%= a.submit "Guardar" %>
-  </div>
-<% end %>
+<%= render "errors/errors", object: @car %>
+
+
+<%= render "cars/partials/form/form"%>

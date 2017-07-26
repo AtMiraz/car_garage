@@ -1,8 +1,6 @@
-<h2>Editar agencia <%= @agency.name%></h2>
+<h2>Editar agencia <%= @car.name%></h2>
 
-<%= form_for @agency, url: car_path, method: :put do |a| %>
-<%= render "agencies/form.html.erb", a: a %>
-  <div class="fields">
-    <%= a.submit "Guardar" %>
-  </div>
-<% end %>
+<%= render "errors/errors", object: @car %>
+
+
+<%= render 'cars/partials/form' %>

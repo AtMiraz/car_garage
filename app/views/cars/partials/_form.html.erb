@@ -1,0 +1,25 @@
+<%= form_for @car do |a| %>
+
+  <div class="fields">
+    <%= a.label :name, "Nombre: " %>
+    <%= a.text_field :name %>
+  </div>
+
+  <div class="fields">
+    <%= a.label :colour, "Color del carro :" %>
+    <%= a.color_field :colour %>
+  </div>
+
+  <div class="fields">
+    <%= a.label :year, "Año del carro: " %>
+    <%= a.text_field :year %>
+  </div>
+
+  <div class="fields">
+    <%= a.label :agency, "Agencia: " %>
+    <%= a.collection_select :agency_id, Agency.all, :id, :name %>
+  </div>
+  <div class="fields">
+    <%= a.submit "Guardar" %>
+  </div>
+<% end %>

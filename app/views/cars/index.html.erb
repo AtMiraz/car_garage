@@ -2,7 +2,7 @@
 
 <%= link_to "Agregar carro", new_car_path%>
 
-<table>
+<table border="1" cellpadding="10">
   <thead>
     <tr>
       <th>#</th>
@@ -15,23 +15,17 @@
   </thead>
 
   <tbody>
-  <% @cars.each do |a|%>
+  <% @cars.each do |car|%>
     <tr>
-      <td><%= a.id %></td>
-      <td><%= a.name%></td>
-      <td><%= a.colour%></td>
-      <td><%= a.name%></td>
-      <td><%= a.agency.name %></td>
-      
-      <td><%= link_to "Editar", edit_car_path%></td>
-      <td><%= link_to "Borrar", car_path(a), method: :delete%></td>
+      <td><%= car.id %></td>
+      <td><%= car.name%></td>
+      <td style="background-color: <%= car.colour %>"></td>
+      <td><%= car.name%></td>
+      <td><%= car.agency.name %></td>
+
+      <td><%= link_to "Editar", edit_car_path(car)%></td>
+      <td><%= link_to "Borrar", cars_path(car), method: :delete%></td>
     </tr>
   <% end %>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
   </tbody>
-
 </table>

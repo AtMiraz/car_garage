@@ -6,8 +6,12 @@ class AgenciesController < ApplicationController
   end
 
   def create
-    Agency.create(agencies_params)
-    redirect_to agencies_path
+    @agency = Agency.create(agencies_params)
+    if @agency.save?
+      redirect_to agencies_path
+    else
+      render :new
+    end
   end
 
   def new

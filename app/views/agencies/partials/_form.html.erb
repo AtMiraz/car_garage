@@ -1,0 +1,10 @@
+<%= form_for @agency do |a| %>
+
+  <div class="fields">
+    <%= a.label :name, "Nombre" %>
+    <%= a.text_field :name %>
+  </div>
+  <div class="fields">
+    <%= a.submit "Guardar" %>
+  </div>
+<% end %>

@@ -7,11 +7,16 @@ class CarsController < ApplicationController
 
   def create
     Car.create(cars_params)
-    redirect_to car_path
+    if @car.save
+      redirect_to cars_path
+    else
+      render :new
+    end
   end
 
   def new
-    @cars = Car.new
+    @car = Car.new
+    @agency = Agency.all
   end
 
   def edit
@@ -23,13 +28,13 @@ class CarsController < ApplicationController
   end
 
   def update
-    @car = Car.find(params[id])
-    @car.update_attributes(car_params)
+    @car = Car.find(params[:id])
+    @car.update_attributes(cars_params)
     redirect_to car_path
   end
 
   def destroy
-    @car = Car.find(params[id])
+    @car = Car.find(params[:id])
     @car.delete
     redirect_to car_path
   end

@@ -2,7 +2,7 @@
 
 <%= link_to "Agregar agencia", new_agency_path%>
 
-<table>
+<table  border="1" cellpadding="10">
   <thead>
     <tr>
       <th>#</th>
@@ -20,11 +20,5 @@
       <td><%= link_to "Borrar", agency_path(a), method: :delete%></td>
     </tr>
   <% end %>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-
+  
 </table>
