@@ -18,13 +18,12 @@
   <% @cars.each do |car|%>
     <tr>
       <td><%= car.id %></td>
-      <td><%= car.name%></td>
+      <td><%= link_to car.name, car_path(car)%></td>
       <td style="background-color: <%= car.colour %>"></td>
-      <td><%= car.name%></td>
+      <td><%= car.year%></td>
       <td><%= car.agency.name %></td>
-
       <td><%= link_to "Editar", edit_car_path(car)%></td>
-      <td><%= link_to "Borrar", cars_path(car), method: :delete%></td>
+      <td><%= link_to "Borrar", car_path(car), method: :delete%></td>
     </tr>
   <% end %>
   </tbody>

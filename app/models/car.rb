@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
   belongs_to :agency
-  validates :name, :year, prescence: true
+  validates_presence_of :name, :year
 
 end

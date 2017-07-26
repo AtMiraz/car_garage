@@ -1,6 +1,6 @@
 <% if object.errors.full_messages.any? %>
 <ul>
-  <% errors.full_messages.each do |n|  %>
+  <% object.errors.full_messages.each do |n|  %>
     <li><%= n %></li>
   <% end %>
 </ul>

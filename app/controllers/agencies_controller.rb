@@ -7,7 +7,7 @@ class AgenciesController < ApplicationController
 
   def create
     @agency = Agency.create(agencies_params)
-    if @agency.save?
+    if @agency.save
       redirect_to agencies_path
     else
       render :new
@@ -23,7 +23,7 @@ class AgenciesController < ApplicationController
   end
 
   def show
-
+    @agency = Agency.find(params[:id])
   end
 
   def update
